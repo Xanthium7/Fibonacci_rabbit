@@ -13,6 +13,11 @@ def rabbit_population(n):
 """
 Let R(n) be the number of rabbit pairs in month n
 R(n) = R(n-1) + R(n-2) for n > 2
+
+Reasoning:
+- R(n-1): Mature pairs from previous month
+- R(n-2): New pairs produced by mature pairs 
+  (pairs that became mature 2 months ago)
 """
 
 

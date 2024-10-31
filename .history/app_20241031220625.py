@@ -13,6 +13,11 @@ def rabbit_population(n):
 """
 Let R(n) be the number of rabbit pairs in month n
 R(n) = R(n-1) + R(n-2) for n > 2
+
+Reasoning:
+- R(n-1): Mature pairs from previous month
+- R(n-2): New pairs produced by mature pairs 
+  (pairs that became mature 2 months ago)
 """
 
 
@@ -31,3 +36,26 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+# Theoretical Analysis
+"""
+Time Complexity: O(n)
+Space Complexity: O(n)
+
+Mathematical Representation:
+R(n) follows a recurrence relation R(n) = R(n-1) + R(n-2)
+Similar to Fibonacci, but with different initial conditions
+
+Mathematical Formula (Approximate):
+Close to golden ratio growth: φ^n / √5
+Where φ = (1 + √5) / 2 ≈ 1.618034 (golden ratio)
+
+Example Sequence:
+Month 1: 1 pair
+Month 2: 1 pair
+Month 3: 2 pairs
+Month 4: 3 pairs
+Month 5: 5 pairs
+Month 6: 8 pairs
+... and so on
+"""
